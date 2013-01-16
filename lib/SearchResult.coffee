@@ -1,0 +1,16 @@
+init = (pageProcessor, body) ->
+  # grab Json results from airbnb javascript snippet in page
+  matchStr = body.match(/AirbnbSearch\.resultsJson[^]+uniqueHostingsCount\":\d+};/g)
+  if not matchStr? or not matchStr.length then return []
+
+  result = matchStr[0]
+  result = result.replace 'AirbnbSearch.resultsJson = ',''
+  result = result.substring(0, result.length-1)
+  result =  eval("(" + result + ')'); # I know I shouldn't be doing this
+  result.properties
+
+module.exports.init = init
+
+
+
+
