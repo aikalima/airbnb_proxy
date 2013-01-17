@@ -29,7 +29,11 @@ git clone https://github.com/aikalima/airbnb_proxy.git
 cd airbnb_proxy
 npm install
 npm start &
-curl localhost:4000/search/los-angeles
+```
+
+Test server:
+```
+curl localhost:4000/search/berlin
 ```
 
 installing server
