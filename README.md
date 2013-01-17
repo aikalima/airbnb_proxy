@@ -78,13 +78,13 @@ curl localhost:4000/search/london/02152013/02192013
 
 Search options:
 * To specify number of search results, append query string 'searchResults' and number of desired results, for example:
-'''
+```
 curl localhost:4000/search/los-angeles?searchResults=100
-'''
+```
 * To specify number guests, append query string 'guests' and number of desired guests, for example:
-'''
+```
 curl localhost:4000/search/los-angeles?guests=2
-'''
+```
 
 Get listing details by listing id (returned by search as 'hostingId'):
 ```
@@ -107,17 +107,12 @@ The defaults are stored in config.json, which should not be modified (unless the
 
 development
 -----------
-If you plan to do development and modify CoffeeScript files, you should install the [CoffeeScript](http://coffeescript.org) compiler:
-
-    npm install -g coffee-script
 
 When you plan to make changes to the CoffeeScript source files, you can run:
 
     coffee -cw <root folder>
 
 in the background to have it continuously watch for changes and recompile as needed.
-
-
 
 
 project structure
