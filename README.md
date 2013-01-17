@@ -4,6 +4,16 @@ airbnb_proxy
 This project contains a [Node.js](http://nodejs.org/) application (using the [express](http://expressjs.com/) framework) that hosts a RESTful Airbnb proxy server.
 The application is written in [CoffeeScript] (http://coffeescript.org/), the code is trans-compiled to JavaScript during installation.
 
+Quick start
+-----------
+If you already have Node.js and CoffeeScript installed, run:
+
+  git clone https://github.com/aikalima/airbnb_proxy.git
+  cd airbnb_proxy
+  npm install
+  npm start &
+  curl localhost:4000/search/los-angeles
+
 installing Node.js & CoffeeScript
 --------------------------------
 For Windows & Mac users, it's easy, just go to http://nodejs.org/#download and download & run your installer.
