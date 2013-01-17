@@ -8,11 +8,13 @@ Quick start
 -----------
 If you already have Node.js and CoffeeScript installed, run:
 
-  git clone https://github.com/aikalima/airbnb_proxy.git
-  cd airbnb_proxy
-  npm install
-  npm start &
-  curl localhost:4000/search/los-angeles
+```
+git clone https://github.com/aikalima/airbnb_proxy.git
+cd airbnb_proxy
+npm install
+npm start &
+curl localhost:4000/search/los-angeles
+```
 
 installing Node.js & CoffeeScript
 --------------------------------
@@ -87,11 +89,11 @@ curl localhost:4000/search/london/02152013/02192013
 ```
 
 Search options:
-* To specify number of search results, append query string 'searchResults' and number of desired results, for example:
+To specify number of search results, append query string 'searchResults' and number of desired results, for example:
 ```
 curl localhost:4000/search/los-angeles?searchResults=100
 ```
-* To specify number guests, append query string 'guests' and number of desired guests, for example:
+To specify number guests, append query string 'guests' and number of desired guests, for example:
 ```
 curl localhost:4000/search/los-angeles?guests=2
 ```
