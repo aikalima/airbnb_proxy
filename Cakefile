@@ -65,7 +65,7 @@ task "compile", "compile application", (options) ->
   compileServerCoffeeScript () ->
     console.log 'Done.'
 
-task "package", "Generate a deployable version of airbnb proxy", (options) ->
+task "install", "Generate a deployable version of airbnb proxy", (options) ->
   console.log 'Remove previous deployment...'
   wrench.rmdirSyncRecursive './target', true
 
