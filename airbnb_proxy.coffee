@@ -72,36 +72,37 @@ app.listen port || 4000, ->
   console.log "Airbnb proxy server version 0.8 listening at http://localhost:#{port}"
   console.log "Airbnb: " +  nconf.get("airbnb:host") + " port:" + nconf.get("airbnb:port")
 
+#namespace for local functions
+app.local = {}
 
 # API
 app.get '/user/:id', (req, res) ->
   userId = req.params.id
   app.options.path = '/users/show/'+userId
-  app.fetch User, app.options, (result) -> _process(res, result)
+  app.local.fetch User, app.options, (result) -> app.local.process(res, result)
 
 app.get '/listing/:id', (req, res) ->
   hostingId = req.params.id
   app.options.path = '/rooms/'+hostingId
-  app.fetch Listing, app.options, (result) -> _process(res, result)
+  app.local.fetch Listing, app.options, (result) -> app.local.process(res, result)
 
 app.get '/search/:location', (req, res) ->
   req.params.checkin = query_defaults.checkin.format '{MM}{dd}{yyyy}'
   req.params.checkout = query_defaults.checkin.addDays(1).format '{MM}{dd}{yyyy}'
   req.params.guests = query_defaults.guests
-  app.run_search req,res
+  app.local.run_search req,res
 
 app.get '/search/:location/:checkin', (req, res) ->
   checkinDate = AirbnbDate.create req.params.checkin
   checkoutDate = checkinDate.addDays(1)
   req.params.checkout = checkoutDate.format '{MM}{dd}{yyyy}'
-  app.run_search req,res
+  app.local.run_search req,res
 
 app.get '/search/:location/:checkin/:checkout', (req, res) ->
-  app.run_search req,res
-
+  app.local.run_search req,res
 
 # Processing
-app.run_search = (req, res) ->
+app.local.run_search = (req, res) ->
   location = req.params.location.replace ' ','-' #airbnb search uses '-' for white space
   checkin = req.params.checkin
   checkout = req.params.checkout
@@ -112,9 +113,9 @@ app.run_search = (req, res) ->
   count = query_defaults.resultCount unless count?
 
   app.options.path = '/s/'+location+'?checkin='+checkin+'&checkout='+checkout+'&guests='+guests+'&per_page='+count
-  app.fetch SearchResult, app.options, (result) -> app.process(res, result)
+  app.local.fetch SearchResult, app.options, (result) -> app.local.process(res, result)
 
-app.fetch = (entity, options, callback) ->
+app.local.fetch = (entity, options, callback) ->
   req = https.get options, (res) ->
     body = ''
     res.on 'data', (chunk) -> body += chunk
@@ -125,7 +126,7 @@ app.fetch = (entity, options, callback) ->
     console.log('Airbnb getPage -> error: %s', err)
     callback null
 
-app.process = (res, result) ->
+app.local.process = (res, result) ->
   if result?
     res.send(JSON.stringify result, 200)
   else
