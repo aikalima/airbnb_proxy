@@ -6,29 +6,7 @@ The application is written in [CoffeeScript] (http://coffeescript.org/), the cod
 
 quick start
 -----------
-If you already have Node.js and CoffeeScript installed, run:
-
-```
-git clone https://github.com/aikalima/airbnb_proxy.git
-cd airbnb_proxy
-npm install
-npm start &
-curl localhost:4000/search/los-angeles
-```
-
-installing Node.js & CoffeeScript
---------------------------------
-For Windows & Mac users, it's easy, just go to http://nodejs.org/#download and download & run your installer.
-
-For Linux, you seem to have to build it (Ubuntu has a package for node, but it's the older 0.4.x version, which isn't compatible).
-Here are the steps that worked for me:
-
-    wget http://nodejs.org/dist/v0.8.1/node-v0.8.1.tar.gz
-    tar -zxf node-v0.8.1.tar.gz
-    cd node-v0.8.1
-    ./configure
-    make
-    sudo make install
+To install Node, go to http://nodejs.org/#download and download & run your installer.
 
 You can then run:
 
@@ -40,12 +18,19 @@ and
 
 to ensure you have Node v0.8.x and NPM v1.1.x installed.
 
-Finally, run:
+To install CoffeeScript, run:
+```
+npm install -g coffee-script
+```
 
-    npm install -g coffee-script
-
-to install coffee script compiler and cake.
-
+Get, install and run the proxy server:
+```
+git clone https://github.com/aikalima/airbnb_proxy.git
+cd airbnb_proxy
+npm install
+npm start &
+curl localhost:4000/search/los-angeles
+```
 
 installing server
 -----------------
