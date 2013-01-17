@@ -4,7 +4,7 @@ airbnb_proxy
 This project contains a [Node.js](http://nodejs.org/) application (using the [express](http://expressjs.com/) framework) that hosts a RESTful Airbnb proxy server.
 The application is written in [CoffeeScript] (http://coffeescript.org/), the code is trans-compiled to JavaScript during installation.
 
-Quick start
+quick start
 -----------
 If you already have Node.js and CoffeeScript installed, run:
 
