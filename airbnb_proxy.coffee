@@ -26,9 +26,7 @@ AirbnbDate =
 
 app = module.exports = express()
 
-###############
-## SETUP  #####
-###############
+# SETUP
 app.configure ->
   # read in environment or command-line arguments first
   #  - priority is given to the first entry found, i.e. args > env > environment.config > config
@@ -74,10 +72,8 @@ app.listen port || 4000, ->
   console.log "Airbnb proxy server version 0.8 listening at http://localhost:#{port}"
   console.log "Airbnb: " +  nconf.get("airbnb:host") + " port:" + nconf.get("airbnb:port")
 
-###############
-## API  #######
-###############
 
+# API
 app.get '/user/:id', (req, res) ->
   userId = req.params.id
   app.options.path = '/users/show/'+userId
@@ -103,9 +99,8 @@ app.get '/search/:location/:checkin', (req, res) ->
 app.get '/search/:location/:checkin/:checkout', (req, res) ->
   app.run_search req,res
 
-###############
-## Processing #
-###############
+
+# Processing
 app.run_search = (req, res) ->
   location = req.params.location.replace ' ','-' #airbnb search uses '-' for white space
   checkin = req.params.checkin
