@@ -104,7 +104,6 @@ configuration
 The defaults are stored in config.json, which should not be modified (unless the defaults change of course).
 
 
-
 development
 -----------
 
