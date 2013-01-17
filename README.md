@@ -2,10 +2,10 @@ airbnb_proxy
 ============
 
 This project contains a [Node.js](http://nodejs.org/) application (using the [express](http://expressjs.com/) framework) that hosts a RESTful Airbnb proxy server.
-The application is written in [coffee script] (http://coffeescript.org/), the code is trans-compiled to JavaScript during installation.
+The application is written in [CoffeeScript] (http://coffeescript.org/), the code is trans-compiled to JavaScript during installation.
 
-installing Node.js & coffee-script
-----------------------------------
+installing Node.js & CoffeeScript
+--------------------------------
 For Windows & Mac users, it's easy, just go to http://nodejs.org/#download and download & run your installer.
 
 For Linux, you seem to have to build it (Ubuntu has a package for node, but it's the older 0.4.x version, which isn't compatible).
@@ -67,7 +67,7 @@ Search for listings by location:
 ```
 curl localhost:4000/search/los-angeles
 ```
-Search for listings by location and check-in date (assumes one night stay):
+Search for listings by location and check-in date (assumes one night stay). Dates are given in 'MMddyyyy' format:
 ```
 curl localhost:4000/search/berlin-germany/02152013
 ```
@@ -77,15 +77,17 @@ curl localhost:4000/search/london/02152013/02192013
 ```
 
 Search options:
-    number of search results: '''curl localhost:4000/search/los-angeles?searchResults=100'''
-    number of guests: '''curl localhost:4000/search/los-angeles?guests=2'''
+* To specify number of search results, append query string 'searchResults' and number of desired results, like:
+'''curl localhost:4000/search/los-angeles?searchResults=100'''
+* To specify number guests, append query string 'guests' and number of desired guests, like:
+'''curl localhost:4000/search/los-angeles?guests=2'''
 
-Get listing details:
+Get listing details by listing id (returned by search as 'hostingId'):
 ```
 curl localhost:4000/listing/325478
 ```
 
-Get user details:
+Get user details (returned by search as 'user'):
 ```
 curl localhost:4000/user/3
 ```
