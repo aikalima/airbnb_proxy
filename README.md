@@ -87,8 +87,6 @@ Search for listings by location and time period:
 ```
 curl localhost:4000/search/london/02152013/02192013
 ```
-
-Search options:
 To specify number of search results, append query string 'searchResults' and number of desired results, for example:
 ```
 curl localhost:4000/search/los-angeles?searchResults=100
