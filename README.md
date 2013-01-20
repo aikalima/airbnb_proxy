@@ -74,7 +74,7 @@ curl localhost:4000/user/3
 sample results
 --------------
 
-All API calls return fully qualified JSON. Here a sample of a search result (array of ,in coffee script notation):
+All API calls return fully qualified JSON. Here is a sample search result ('array of' ,in coffee script notation):
 ```
   address: "Berlin"
   neighborhood:
