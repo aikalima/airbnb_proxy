@@ -38,6 +38,12 @@ If everything works properly, you should see a message saying:
    Airbnb proxy server version 0.8 listening at http://localhost:4000
    Airbnb: www.airbnb.com port:443
 
+Test the server:
+```
+npm test
+```
+The test runs a simple search returning JSON.
+
 usage
 -----
 
@@ -74,7 +80,7 @@ curl localhost:4000/user/3
 sample results
 --------------
 
-All API calls return fully qualified JSON. Here is a sample search result ('array of' ,in coffee script notation):
+All API calls return fully qualified JSON. Here is a sample search result (in coffee-script notation):
 ```
   address: "Berlin"
   neighborhood:
