@@ -1,8 +1,11 @@
-airbnb_proxy
-============
+airbnb api proxy
+================
 
-This project contains a [Node.js](http://nodejs.org/) application (using the [express](http://expressjs.com/) framework) that hosts a RESTful Airbnb api proxy server supporting search and retrieving user and listing details.
-The application is written in [CoffeeScript] (http://coffeescript.org/).
+Brian Chesky, when is the airbnb api coming out? ["Right now it's not something in the near term"] (http://www.youtube.com/watch?v=6yPfxcqEXhE&t=2h12m12s).
+5      	
+-
+Until then, this project contains a [Node.js](http://nodejs.org/) application (using the [express](http://expressjs.com/) framework) that hosts a RESTful Airbnb api proxy server.
+The api supports listing search by time/location and retrieving user and listing details. The application is written in [CoffeeScript] (http://coffeescript.org/).
 
 quick start
 -----------
