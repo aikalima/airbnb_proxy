@@ -17,9 +17,9 @@
     },
     "scripts": {
         "start": "node airbnb_proxy.js",
-        "pretest": "cake compiletest",
-        "install": "cake install; node airbnb_proxy.js &"
+        "install": "cake install; node airbnb_proxy.js &",
+        "test": "curl localhost:4000/search/berlin-germany/02152013"
     },
     "devDependencies": {}, 
-    "name": "airbot"
+    "name": "airbnb_proxy"
 }
