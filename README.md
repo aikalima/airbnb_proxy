@@ -10,20 +10,13 @@ quick start
 -----------
 To install Node, go to http://nodejs.org/#download and download & run your installer.
 
-You can then run:
-
-    node -v
-
-and
-
-    npm -v
-
-to ensure you have Node v0.8.x and NPM v1.1.x installed.
+Ensure that you have Node v0.8.x and NPM v1.1.x installed.
 
 To install and run the proxy server, simply run:
 
 ```
 git clone https://github.com/aikalima/airbnb_proxy.git
+cd airbnb_proxy
 npm install &
 ```
 The install command does all of the following:
